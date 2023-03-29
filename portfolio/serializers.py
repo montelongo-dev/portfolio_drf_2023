@@ -25,6 +25,6 @@ class PortfolioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Portfolio
         fields = ['id', 'logo_text', 'name', 'title', 'about_bold_copy', 'about_reg_copy', 
-                  'skill_resume_url', 'skill_card_1', 'skill_card_2', 'skill_card_3']
+                  'skill_resume_url', 'skill_card_1', 'skill_card_2', 'skill_card_3', 'contact_copy']
 
     
