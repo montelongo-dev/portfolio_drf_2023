@@ -1,6 +1,17 @@
 from rest_framework import serializers
-
 from .models import *
+
+
+class HomeSectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HomeSection
+        fields = '__all__'
+
+
+class AboutSectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AboutSection
+        fields = '__all__'
 
 
 class SkillSerializer(serializers.ModelSerializer):
@@ -17,14 +28,17 @@ class SkillTypeSerializer(serializers.ModelSerializer):
         fields = ['type', 'skills']
 
 
-class PortfolioSerializer(serializers.ModelSerializer):
+class SkillSectionSerializer(serializers.ModelSerializer):
     skill_card_1 = SkillTypeSerializer(many=False, read_only=True)
     skill_card_2 = SkillTypeSerializer(many=False, read_only=True)
     skill_card_3 = SkillTypeSerializer(many=False, read_only=True)
 
     class Meta:
-        model = Portfolio
-        fields = ['id', 'logo_text', 'name', 'title', 'about_bold_copy', 'about_reg_copy', 
-                  'skill_resume_url', 'skill_card_1', 'skill_card_2', 'skill_card_3', 'contact_copy']
+        model = SkillSection
+        fields = '__all__'        
 
-    
+
+class ContactSectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ContactSection
+        fields = ['contact_copy']
