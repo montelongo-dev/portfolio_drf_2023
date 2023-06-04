@@ -19,7 +19,6 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG', False)
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', ]
-# ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(',')
 
 # Application definition
 
